@@ -1,0 +1,8 @@
+// backend/src/routes/otp.routes.ts
+import express from 'express';
+import { verifyWidgetToken } from '../controllers/otp.controller';
+const router = express.Router();
+// router.post('/send-otp', sendOTP);
+// router.post('/verify-otp', verifyOTPHandler);
+router.post('/verify-widget-token', verifyWidgetToken);
+export default router;
