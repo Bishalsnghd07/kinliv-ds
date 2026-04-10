@@ -328,24 +328,24 @@ export default function RingDetail({ params }: { params: { productId: string } }
 
   const handleAddToCart = () => {
     if (!product) return;
-    addToCart({
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      quantity,
-      image: product.images[0],
-    });
+    // addToCart({
+    //   id: product.id,
+    //   name: product.name,
+    //   price: product.price,
+    //   quantity,
+    //   image: product.images[0],
+    // });
   };
 
   const handlePlanSelect = (plan: ProductPlan) => {
     if (!product) return;
-    addToCart({
-      id: `${product.id}-${plan.id}`,
-      name: `${product.name} - ${plan.title}`,
-      price: plan.price,
-      quantity: 1,
-      image: product.images[0],
-    });
+    // addToCart({
+    //   id: `${product.id}-${plan.id}`,
+    //   name: `${product.name} - ${plan.title}`,
+    //   price: plan.price,
+    //   quantity: 1,
+    //   image: product.images[0],
+    // });
     router.push("/checkout");
   };
 

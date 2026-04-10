@@ -24,4 +24,4 @@ yarn-error.log*
 
 # Build files
 dist/
-build/
+build/public/videos/

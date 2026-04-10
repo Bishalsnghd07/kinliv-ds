@@ -22,13 +22,13 @@ export default function NecklaceDetail({
   }
 
   const handleAddToCart = () => {
-    addToCart({
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      quantity: quantity,
-      image: product.image,
-    });
+    // addToCart({
+    //   id: product.id,
+    //   name: product.name,
+    //   price: product.price,
+    //   quantity: quantity,
+    //   image: product.image,
+    // });
   };
 
   return (

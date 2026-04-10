@@ -17,5 +17,7 @@ export default async function ProductPage({
   }
 
   // 2. Pass the data to the Client Component for interactivity
-  return <ProductDetailClient product={product} />;
+  return <ProductDetailClient 
+  product={product}
+   />;
 }

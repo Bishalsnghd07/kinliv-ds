@@ -70,5 +70,5 @@ import { redirect } from "next/navigation";
 export default function Home() {
   // Redirect the root path to your desired dynamic product page
   // Replace handcrafted-rings with a real product id from your data source
-  redirect("/product/kin-ultrapower");
+  redirect("/product/kinliv-ds");
 }

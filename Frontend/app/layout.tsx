@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import "./index.css";
 import Navbar from "@/components/Navbar";
-import { CartProvider } from "@/context/CartContext";
+// import { CartProvider } from "@/context/CartContext";
 // import { ProductProvider } from "@/context/ProductContext";
 import Script from "next/dist/client/script";
+import LanguageGrowl from "@/components/LanguageGrowl";
+import { CartProvider } from "@/context/CartContext";
 
 export const metadata: Metadata = {
-  title: "Kin Ultrapower",
-  description: "Leading provider of premium male enhancement supplements, designed to boost performance, confidence, and overall well-being. Our scientifically formulated products are crafted to enhance vitality and support a healthier lifestyle.",
+  title: "KinLiv DS",
+  description: "KinLiv DS - India's #1 Liver Support Supplement. Clinically Proven, Doctor Recommended, and Loved by Thousands. Boost Your Liver Health with KinLiv DS Today!",
 };
 
 export default function RootLayout({
@@ -48,12 +50,16 @@ export default function RootLayout({
 
         {/* <ProductProvider> */}
           <CartProvider>
-            <header className="flex relative top-0 bg-[#191919] z-[20] w-full gap-4 px-2 md:px-4 md:pt-[1rem] p-2 border-b border-gray-100 border-opacity-10">
-              <Navbar />
+            <header className="bg-[#B91C1C] text-white text-center py-2 px-4 text-sm md:text-base font-bold tracking-tight shadow-lg">
+              {/* <Navbar /> */}
+              {/* <div className="bg-[#B91C1C] text-white text-center py-2 px-4 text-sm md:text-base font-bold tracking-tight shadow-lg"> */}
+        ⚠ WARNING: Limited Stock Available — Offer Ends Tonight at Midnight
+      {/* </div> */}
             </header>
             {children}
           </CartProvider>
         {/* </ProductProvider> */}
+        <LanguageGrowl />
       </body>
     </html>
   );
