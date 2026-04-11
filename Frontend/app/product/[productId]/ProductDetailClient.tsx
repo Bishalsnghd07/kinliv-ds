@@ -535,8 +535,8 @@ const wrapperRef = useRef(null);
         }}
         className={`relative w-[8.41rem] h-[8.41rem] flex-shrink-0 rounded-xl overflow-hidden border-2 transition-all duration-300 snap-center flex items-center justify-center ${
           activeIndex === idx
-            ? "border-amber-500 shadow-[0_0_15px_rgba(245,158,11,0.4)] scale-105 opacity-100"
-            : "border-white/10 opacity-50 hover:opacity-100"
+            ? "border-amber-500 shadow-[0_0_15px_rgba(245,158,11,0.4)] scale-105"
+            : "border-white/10 hover:opacity-100"
         }`}
       >
         {isThumbVideo ? (
@@ -556,34 +556,9 @@ const wrapperRef = useRef(null);
     );
   })}
 </div>
-
-          {/* Thumbnails */}
-          {/* <div className="flex gap-4 items-center pl-4 overflow-x-auto pb-2 w-full ">
-            {allImages.map((img, idx) => {
-              const isThumbVid = typeof img === "object" && (img as any).type === "video";
-              return (
-                <button
-                  key={idx}
-                  onClick={() => setActiveIndex(idx)}
-                  className={`relative w-24 h-24 flex-shrink-0 rounded-2xl overflow-hidden border-2 transition-all ${
-                    activeIndex === idx ? "border-amber-500 scale-105" : "border-white/10 opacity-60"
-                  }`}
-                >
-                  {isThumbVid ? (
-                    <div className="w-full h-full bg-slate-900 flex flex-col items-center justify-center gap-1">
-                      <Play size={20} fill="#f59e0b" className="text-amber-500" />
-                      <span className="text-[8px] font-bold text-gray-500 uppercase">Video</span>
-                    </div>
-                  ) : (
-                    <Image src={img as string} alt="thumb" fill className="object-cover" />
-                  )}
-                </button>
-              );
-            })}
-          </div> */}
         </div>
 
-  <div className="flex flex-col justify-center p-8">
+  <div className="flex flex-col justify-center p-4">
     {/* Product Name - Lightened */}
     <h1 className="text-3xl font-bold mb-4 text-amber-600">
       {product.name}
@@ -635,10 +610,10 @@ const wrapperRef = useRef(null);
         <div
           key={plan.id}
           onClick={() => handlePlanSelect(plan)}
-          className={`cursor-pointer border rounded-2xl p-2 transition-all relative backdrop-blur-sm bg-slate-200 group ${
+          className={`cursor-pointer border rounded-2xl p-2 transition-all relative backdrop-blur-sm group ${
             selectedPlan.id === plan.id
-              ? "border-amber-500 bg-amber-500/10 scale-105 shadow-[0_0_20px_rgba(245,158,11,0.2)]"
-              : "border-white/10 bg-white/5 hover:border-white/30"
+              ? "border-amber-400 bg-amber-100 scale-105 shadow-lg z-10" // Selected: Distinct and vibrant
+        : "border-gray-200 bg-gray-200 hover:bg-white hover:border-gray-300" // Unselected: Lighter and subtle
           }`}
         >
           <span className="absolute -top-3 left-1 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter">
@@ -670,7 +645,7 @@ const wrapperRef = useRef(null);
             </span>
           </div>
 
-          <p className="text-[10px] text-gray-800 uppercase mt-1">
+          <p className="text-[10px] text-gray-800 uppercase font-semibold mt-1">
             Inclusive of all taxes
           </p>
           <p className="text-[10px] font-bold text-amber-600 mt-1">
