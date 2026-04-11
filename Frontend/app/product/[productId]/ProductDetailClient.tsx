@@ -258,7 +258,23 @@ const wrapperRef = useRef(null);
             <h1 style={{ lineHeight: '1.30' }} className="font-bold text-6xl text-[#1A1A1A] leading-[1.05] tracking-wider mb-8">
               यह अंदर पल  <br />
               रही बीमारी आपके <br />
-              शरीर को <span className="text-[#B91C1C]">खत्म</span>
+              शरीर को <span className="relative inline-block text-[#B91C1C]">
+  खत्म
+  {/* Hand-drawn squiggle underline */}
+  <svg
+    className="absolute -bottom-2 left-0 w-full h-[10px] pointer-events-none"
+    viewBox="0 0 100 20"
+    preserveAspectRatio="none"
+  >
+    <path
+      d="M0 10 Q 12.5 2 25 10 T 50 10 T 75 12 T 100 10"
+      stroke="#F97316" 
+      strokeWidth="4"
+      fill="transparent"
+      strokeLinecap="round"
+    />
+  </svg>
+</span>
               <br />
               कर रही है...
               <br />
@@ -335,7 +351,7 @@ const wrapperRef = useRef(null);
 
           {/* Heading */}
           <h2 className="text-3xl md:text-[52px] font-black text-[#1A1A1A] text-center mb-12 tracking-tight">
-            Kya Aapko Bhi Ye Symptoms Hain?
+            क्या आपको भी ये <span className="text-[#C53030]">Symptoms</span> हैं?
           </h2>
 
           {/* Symptoms Grid */}
