@@ -344,7 +344,7 @@ const wrapperRef = useRef(null);
           {/* Symptoms Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
             {[
-              { emoji: "😫", text: "Thakaan" },
+              { emoji: "😫", text: "थकान" },
               { emoji: "🦴", text: "Joint Pain" },
               { emoji: "🔋", text: "Low Energy" },
               { emoji: "😴", text: "Poor Sleep" },
@@ -799,12 +799,12 @@ const wrapperRef = useRef(null);
         </div>
       </div>
     </section>
-    <section className="w-full bg-slate-50 [oklch(0.985 0 0)] py-12 px-6 lg:px-12 font-sans">
+    <section className="w-full bg-slate-50 [oklch(0.985 0 0)] py-10 px-6 lg:px-12 font-sans">
       <div className="max-w-[1200px] mx-auto">
         
         {/* Section Heading */}
         <h2 className="text-4xl md:text-5xl font-black text-[#1A1A1A] text-center mb-16 tracking-tighter">
-          Real People. Real Results.
+          असली लोग। असली परिणाम।
         </h2>
 
         {/* Testimonials Grid */}

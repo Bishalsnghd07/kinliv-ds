@@ -64,8 +64,8 @@ export function CartDropdown() {
   return (
     <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="relative bg-black">
-          <ShoppingCart className="h-8 w-8 bg-black" />
+        <Button variant="ghost" size="icon" className="relative bg-gray-800 shadow-lg">
+          <ShoppingCart className="h-8 w-8" />
           {cartItemCount > 0 && (
             <Badge className="absolute -right-2 -top-2 h-6 w-6 rounded-full p-0 flex items-center justify-center bg-[#D87D4A]">
               {cartItemCount}
