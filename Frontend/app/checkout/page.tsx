@@ -819,7 +819,7 @@ import { useCart } from "@/context/CartContext";
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { ShoppingCart, Banknote } from "lucide-react";
+import { ShoppingCart, Banknote, ChevronLeft } from "lucide-react";
 import { API_BASE_URL, createOrder } from "@/lib/api";
 import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
@@ -1024,10 +1024,19 @@ export default function CheckoutPage() {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-6xl">
+  <button 
+    type="button"
+    onClick={() => router.back()}
+    className="flex items-center gap-2 text-gray-400 hover:text-[#D87D4A] transition-colors mb-6 group"
+  >
+    <ChevronLeft size={24} className="group-hover:-translate-x-1 transition-transform text-gray-700" />
+    <span className="text-lg font-medium text-gray-700">Back</span>
+  </button>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* LEFT COLUMN: FORM */}
           <div className="lg:col-span-2 bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+            {/* Add this Back Button snippet */}
             <h1 className="text-2xl font-bold mb-8 uppercase tracking-tight">Checkout</h1>
 
             {/* Billing Details */}
@@ -1146,7 +1155,7 @@ export default function CheckoutPage() {
                 </div>
 
                 {/* COD Card */}
-                <div
+                {/* <div
                   onClick={() => setValue("paymentMethod", "cod")}
                   className={`flex items-center justify-between p-4 border rounded-xl cursor-pointer transition-all ${
                     selectedPayment === "cod" ? "border-[#D87D4A] bg-[#fffaf7] shadow-sm" : "border-gray-200"
@@ -1166,7 +1175,7 @@ export default function CheckoutPage() {
                     </div>
                   </div>
                   <Banknote className="text-gray-400" size={24} />
-                </div>
+                </div> */}
               </div>
             </section>
           </div>

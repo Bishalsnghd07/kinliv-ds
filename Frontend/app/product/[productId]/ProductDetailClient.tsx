@@ -10,6 +10,8 @@ import { useRouter } from "next/navigation";
 import { Leaf, Zap, ShieldCheck, Award, ChevronDown, User, Play, AlertTriangle, ShieldAlert, Clock, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import Script from "next/script";
+import CountdownTimer from "@/components/CountdownTimer";
+import ResponsibilitySection from "@/components/ResponsibilitySection";
 
 declare global {
   namespace JSX {
@@ -206,51 +208,9 @@ const wrapperRef = useRef(null);
     }
   }, []);
 
-const handlePlanSelect = (plan: ProductPlan) => {
+  const handlePlanSelect = (plan: ProductPlan) => {
   setSelectedPlan(plan);
 };
-
-const CountdownTimer = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
-
-  useEffect(() => {
-    // Logic for an evergreen timer (Resets to 2 hours if finished)
-    // Or you can set a fixed end-of-day target
-    const target = new Date();
-    target.setHours(23, 59, 59);
-
-    const timer = setInterval(() => {
-      const now = new Date();
-      const difference = target.getTime() - now.getTime();
-
-      if (difference <= 0) {
-        clearInterval(timer);
-      } else {
-        setTimeLeft({
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60),
-        });
-      }
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const TimerBox = ({ value, label }: { value: number; label: string }) => (
-    <div className="flex flex-col items-center">
-      <div className="bg-[#B91C1C] text-white w-20 h-20 md:w-28 md:h-28 rounded-2xl md:rounded-[32px] flex items-center justify-center text-4xl md:text-6xl font-black shadow-xl border-b-4 border-black/20">
-        {value.toString().padStart(2, '0')}
-      </div>
-      <span className="text-[#B91C1C] font-black uppercase tracking-widest text-[10px] md:text-xs mt-3">
-        {label}
-      </span>
-    </div>
-  );
-  
 
   // Default it to the first plan (60 days)
 
@@ -356,7 +316,7 @@ const CountdownTimer = () => {
        {/* RIGHT: VIDEO UI */}
    <div className="relative mt-8 lg:mt-4 w-full">
       <div className="relative aspect-[16/10] rounded-[32px] md:rounded-[48px] overflow-hidden shadow-2xl bg-black">
-          <iframe
+          <iframe key="vturb-iframe-constant"
     src="https://scripts.converteai.net/7bb306e1-b4d6-4ade-91fb-89f35c19604f/players/69d8bf3ef59fe98c9ed87a35/v4/embed.html"
     className="absolute inset-0 w-full h-full"
     allowFullScreen
@@ -499,7 +459,7 @@ const CountdownTimer = () => {
               Introducing
             </span>
             <h3 className="text-[52px] md:text-[88px] font-black text-[#1A1A1A] leading-none tracking-tighter">
-              NatureHealth Pro
+              KinLiv DS
             </h3>
           </motion.div>
         </div>
@@ -930,52 +890,9 @@ const CountdownTimer = () => {
         </div>
       </div>
     </section>
-    <section className="w-full bg-[#FFF5F5] py-16 px-6 font-sans border-y border-red-100">
-      <div className="max-w-[800px] mx-auto text-center">
-        
-        <motion.div
-          animate={{ scale: [1, 1.02, 1] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-        >
-          <h2 className="text-3xl md:text-5xl font-black text-[#1A1A1A] mb-4 tracking-tighter">
-            Hurry! Sale Ends In:
-          </h2>
-          <p className="text-[#B91C1C] font-bold text-lg md:text-xl mb-10">
-            Stock limited. Once gone, price returns to ₹2,999.
-          </p>
-        </motion.div>
-
-        {/* The Digital Timer */}
-        <div className="flex justify-center items-center gap-3 md:gap-6">
-          <TimerBox value={timeLeft.hours} label="Hours" />
-          <span className="text-4xl md:text-6xl font-black text-[#B91C1C] pb-6">:</span>
-          <TimerBox value={timeLeft.minutes} label="Minutes" />
-          <span className="text-4xl md:text-6xl font-black text-[#B91C1C] pb-6">:</span>
-          <TimerBox value={timeLeft.seconds} label="Seconds" />
-        </div>
-
-        {/* Low Stock Bar */}
-        <div className="mt-12 max-w-md mx-auto">
-          <div className="flex justify-between text-xs font-black uppercase tracking-widest text-gray-400 mb-2">
-            <span>Only 7 Items Left</span>
-            <span className="text-red-600">92% Sold</span>
-          </div>
-          <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
-            <motion.div 
-              initial={{ width: "0%" }}
-              whileInView={{ width: "92%" }}
-              transition={{ duration: 1.5, ease: "easeOut" }}
-              className="h-full bg-red-600 rounded-full"
-            />
-          </div>
-        </div>
-
-        </div>
-      </section>
+  <CountdownTimer />
+  <ResponsibilitySection />
 {/* <LanguageGrowl /> */}
       </>
     );
   };
-
-  return <CountdownTimer />;
-}

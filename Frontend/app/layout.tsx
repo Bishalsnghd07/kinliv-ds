@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Script from "next/dist/client/script";
 import LanguageGrowl from "@/components/LanguageGrowl";
 import { CartProvider } from "@/context/CartContext";
+import { CartDropdown } from "@/components/CartDropdown";
 
 export const metadata: Metadata = {
   title: "KinLiv DS",
@@ -53,8 +54,15 @@ export default function RootLayout({
             <header className="bg-[#B91C1C] text-white text-center py-2 px-4 text-sm md:text-base font-bold tracking-tight shadow-lg">
               {/* <Navbar /> */}
               {/* <div className="bg-[#B91C1C] text-white text-center py-2 px-4 text-sm md:text-base font-bold tracking-tight shadow-lg"> */}
+       <div className="flex justify-between items-center w-auto max-w-7xl mx-auto">
+        <span className="flex justify-center items-center max-w-[90rem] lg:pl-[6.4rem] tracking-wide">
         ⚠ WARNING: Limited Stock Available — Offer Ends Tonight at Midnight
+        </span>
+        <span className="max-w-[10rem]">
+      <CartDropdown />
+        </span>
       {/* </div> */}
+       </div>
             </header>
             {children}
           </CartProvider>
