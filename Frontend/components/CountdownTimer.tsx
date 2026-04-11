@@ -57,10 +57,10 @@ const CountdownTimer = () => {
       <div className="max-w-[800px] mx-auto text-center">
         <motion.div
           animate={{ scale: [1, 1.03, 1] }}
-          transition={{ repeat: Infinity, duration: 3 }}
+          transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
         >
-          <h2 className="text-4xl md:text-6xl font-black text-[#1A1A1A] mb-6 leading-8">
-            Hurry! कल तक <span className="text-[#B91C1C]">Price</span> बढ़ सकती है
+          <h2 style={{lineHeight: '4.95rem'}} className="text-4xl md:text-6xl font-black text-[#1A1A1A] mb-6">
+            Hurry! कल तक <span className="text-[#B91C1C]">Price</span> बढ़ सकता है
           </h2>
           {/* <p className="text-[#B91C1C] font-bold text-lg md:text-2xl mb-12">
             Stock limited. Once gone, price returns to ₹2,999.
