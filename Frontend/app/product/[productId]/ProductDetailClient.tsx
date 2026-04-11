@@ -244,18 +244,18 @@ const wrapperRef = useRef(null);
   // );
 
   return (
-    <><section className="w-full bg-[#F9FAFB] pt-20 pb-20 px-6 lg:px-12 font-sans">
+    <><section className="w-full bg-[#F9FAFB] pt-4 lg:pt-10 pb-12 px-6 lg:px-12 font-inter">
       <div className="lg:max-w-[1300px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
           {/* LEFT: TEXT CONTENT */}
           <div className="flex flex-col">
-            <span className="text-[#B91C1C] font-bold uppercase tracking-widest text-base mb-2">
+            <span className="text-[#B91C1C] font-bold uppercase tracking-widest text-base mb-1">
               WARNING:
             </span>
             {/* रही बीमारी आपके शरीर को खत्म कर रही है… आज एक्शन लें!  */}
 
-            <h1 style={{ lineHeight: '1.30' }} className="font-bold text-6xl text-[#1A1A1A] leading-[1.05] tracking-wider mb-8">
+            <h1 style={{ lineHeight: '1.30' }} className="font-bold text-4xl lg:text-6xl text-[#1A1A1A] lg:leading-[1.05] lg:tracking-wider mb-8">
               यह अंदर पल  <br />
               रही बीमारी आपके <br />
               शरीर को <span className="relative inline-block text-[#B91C1C] underline decoration-wavy decoration-5 decoration-[#b9631c]">
@@ -316,8 +316,8 @@ const wrapperRef = useRef(null);
 
           {/* RIGHT: VIDEO UI */}
        {/* RIGHT: VIDEO UI */}
-   <div className="relative mt-8 lg:mt-4 w-full">
-      <div className="relative aspect-[16/10] rounded-[32px] md:rounded-[48px] overflow-hidden shadow-2xl bg-black">
+   <div className="relative mt-8 lg:mt-12 w-full">
+      <div className="relative aspect-[18/10] rounded-[32px] md:rounded-[48px] overflow-hidden shadow-2xl bg-black">
           <iframe key="vturb-iframe-constant"
     src="https://scripts.converteai.net/7bb306e1-b4d6-4ade-91fb-89f35c19604f/players/69d8bf3ef59fe98c9ed87a35/v4/embed.html"
     className="absolute inset-0 w-full h-full"
@@ -332,7 +332,8 @@ const wrapperRef = useRef(null);
         </div>
       </div>
       {/* --- SYMPTOMS SECTION --- */}
-    </section><section className="w-full bg-[#ffffd2] py-24 px-6 lg:px-12 font-sans">
+    </section>
+    <section className="w-full bg-[#ffffd2] py-12 px-6 lg:px-12 font-sans">
         <div className="max-w-[1200px] mx-auto">
 
           {/* Heading */}
@@ -378,7 +379,7 @@ const wrapperRef = useRef(null);
         </div>
       </section>
       {/* --- CONSEQUENCES (IGNORE KARNE KA ANJAAM) SECTION --- */}
-<section className="w-full bg-[#000000] py-24 px-6 lg:px-12 font-sans overflow-hidden">
+<section className="w-full bg-[#000000] py-10 px-6 lg:px-12 font-sans overflow-hidden">
       <div className="max-w-[1200px] mx-auto">
         
         {/* Animated Heading Section */}
@@ -433,7 +434,7 @@ const wrapperRef = useRef(null);
         </div>
       </div>
     </section>
-    <section className="w-full bg-white py-24 px-6 lg:px-12 font-sans overflow-hidden">
+    <section className="w-full bg-white py-12 px-6 lg:px-12 font-sans overflow-hidden">
       <div className="max-w-[1200px] mx-auto text-center">
         
         {/* Simple Heading */}
@@ -447,7 +448,7 @@ const wrapperRef = useRef(null);
         </motion.h2>
 
         {/* Brand Reveal with Green Glow */}
-        <div className="relative inline-block mb-12">
+        <div className="relative inline-block mb-6">
           {/* THE GLOW: This creates that soft green light behind the text */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-emerald-500/15 blur-[100px] rounded-full -z-10"></div>
           
@@ -472,7 +473,7 @@ const wrapperRef = useRef(null);
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-gray-500 text-lg md:text-2xl max-w-4xl mx-auto leading-relaxed font-medium mt-4"
+          className="text-gray-500 text-lg md:text-2xl max-w-4xl mx-auto leading-relaxed font-medium"
         >
           100% natural ingredients, zero side effects. Thousands of users in India have 
           already transformed their health using this exact method. No chemical pills, no 
@@ -481,7 +482,8 @@ const wrapperRef = useRef(null);
 
       </div>
     </section>
-    <div id="product" className="grid grid-cols-1 md:grid-cols-2 gap-16 my-2 md:my-0 md:mx-4 bg-[#121721] rounded-3xl overflow-hidden shadow-2xl border border-white/5">
+    <section className="w-full bg-[#f4f8fc] py-12 px-6 lg:px-12 font-sans">
+    <div id="product" className="grid grid-cols-1 md:grid-cols-2 gap-16 my-2 md:my-0 md:mx-4 bg-[#fefefff8] rounded-3xl overflow-hidden shadow-2xl border border-white/5">
   {/* Left Image Gallery with Thumbnails */}
  <div className="flex flex-col">
        {/* <div 
@@ -583,18 +585,18 @@ const wrapperRef = useRef(null);
 
   <div className="flex flex-col justify-center p-8">
     {/* Product Name - Lightened */}
-    <h1 className="text-3xl font-bold mb-4 text-white">
+    <h1 className="text-3xl font-bold mb-4 text-amber-600">
       {product.name}
     </h1>
     
     {/* Description - Lightened */}
-    <p className="text-gray-300 mb-6 leading-relaxed">
+    <p className="text-gray-800 mb-6 leading-relaxed">
       {product.description}
     </p>
 
     <div className="flex items-center gap-2 mb-6">
   {/* The Star Rating */}
-  <div className="text-amber-400 text-2xl tracking-widest drop-shadow-[0_0_8px_rgba(251,191,36,0.4)]">
+  <div className="text-amber-600 text-2xl tracking-widest drop-shadow-[0_0_8px_rgba(251,191,36,0.4)]">
     ★★★★★ 4.5/5
   </div>
 
@@ -606,7 +608,7 @@ const wrapperRef = useRef(null);
     behavior: "smooth" 
   });
 }}
-    className="text-gray-200 hover:text-amber-400 transition-colors text-sm font-bold mt-1"
+    className="text-gray-800 hover:text-amber-400 transition-colors text-sm font-bold mt-1"
   >
     (10000+) Customer Reviews
   </button>
@@ -614,10 +616,10 @@ const wrapperRef = useRef(null);
 
     {product.materials && (
       <div className="mb-6">
-        <h3 className="text-xs tracking-widest font-bold text-amber-400 uppercase">
+        <h3 className="text-xs tracking-widest font-bold text-amber-600 uppercase">
           Key Benefits
         </h3>
-        <p className="text-gray-400">
+        <p className="text-gray-800">
           {/* Reminder: Update your product object to remove the jewelry materials! */}
           {product.materials.join(", ")}
         </p>
@@ -633,7 +635,7 @@ const wrapperRef = useRef(null);
         <div
           key={plan.id}
           onClick={() => handlePlanSelect(plan)}
-          className={`cursor-pointer border rounded-2xl p-2 transition-all relative backdrop-blur-sm group ${
+          className={`cursor-pointer border rounded-2xl p-2 transition-all relative backdrop-blur-sm bg-slate-200 group ${
             selectedPlan.id === plan.id
               ? "border-amber-500 bg-amber-500/10 scale-105 shadow-[0_0_20px_rgba(245,158,11,0.2)]"
               : "border-white/10 bg-white/5 hover:border-white/30"
@@ -649,29 +651,29 @@ const wrapperRef = useRef(null);
             </span>
           )}
 
-          <h3 className="text-xl font-bold text-white">{plan.title}</h3>
+          <h3 className="text-xl font-bold text-gray-800">{plan.title}</h3>
           {/* <p className="text-gray-400 text-sm font-semibold">{plan.tablets} Tablets</p> */}
-          <p className="text-gray-400 text-sm font-semibold">{plan.bottles} Bottle</p>
+          <p className="text-gray-800 text-sm font-semibold">{plan.bottles} Bottle</p>
           
 
-          <p className="text-2xl font-bold mt-4 text-white">
+          <p className="text-2xl font-bold mt-4 text-gray-800">
             ₹ {plan.price}
           </p>
 
-          <p className="text-red-400/80 line-through text-sm">
+          <p className="text-red-500/80 line-through text-sm font-semibold">
             ₹ {plan.mrp}
           </p>
 
           <div className="mt-3 mb-1">
-            <span className=" text-amber-400 text-[0.6rem] leading-tight font-black px-0 py-0 rounded uppercase">
+            <span className=" text-amber-600 text-[0.6rem] leading-tight font-black px-0 py-0 rounded uppercase">
                Free Shipping for Prepaid Orders
             </span>
           </div>
 
-          <p className="text-[10px] text-gray-500 uppercase mt-1">
+          <p className="text-[10px] text-gray-800 uppercase mt-1">
             Inclusive of all taxes
           </p>
-          <p className="text-[10px] font-semibold text-amber-400 mt-1">
+          <p className="text-[10px] font-bold text-amber-600 mt-1">
   {plan.codShipping ? `+ ₹${plan.codShipping} shipping for COD` : "Free shipping on COD"}
 </p>
         </div>
@@ -680,8 +682,8 @@ const wrapperRef = useRef(null);
 
    {/* 2. Update the Price Display JSX */}
 <div className="mb-6">
- <p className="text-sm text-gray-400 uppercase tracking-widest mb-1">Total Price</p>
-<p className="text-4xl font-bold text-amber-500">
+ <p className="text-sm text-gray-800 uppercase tracking-widest mb-1">Total Price</p>
+<p className="text-4xl font-bold text-amber-600">
   {/* Calculate based on selected plan price * quantity */}
   ₹ {(selectedPlan.price * quantity).toLocaleString('en-IN', { minimumFractionDigits: 2 })}
 </p>
@@ -756,6 +758,7 @@ const wrapperRef = useRef(null);
   </div>
   
   </div>
+  </section>
   <section className="w-full bg-gray-100 py-24 px-6 lg:px-12 font-sans">
       <div className="max-w-[1200px] mx-auto">
         
