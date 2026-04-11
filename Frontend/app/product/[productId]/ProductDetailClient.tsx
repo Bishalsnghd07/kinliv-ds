@@ -119,19 +119,19 @@ const steps = [
     {
       number: "1",
       title: "Take Daily",
-      text: "Roz subah sirf 2 capsules paani ke saath lein.",
+      text: "रोज़ सुबह सिर्फ 2 कैप्सूल पानी के साथ लें।",
       icon: <Clock className="w-8 h-8 text-emerald-500" />,
     },
     {
       number: "2",
       title: "Body Absorbs Nutrients",
-      text: "Aapka body natural ingredients ko absorb karna shuru karta hai.",
+      text: "आपका body natural ingredients को absorb करना शुरू करता है।",
       icon: <ShieldCheck className="w-8 h-8 text-emerald-500" />,
     },
     {
       number: "3",
       title: "Feel The Difference",
-      text: "Kuch hi dino mein energy aur strength wapas aati hai.",
+      text: "कुछ ही दिनों में energy और strength वापस आती है।",
       icon: <Zap className="w-8 h-8 text-emerald-500" />,
     },
   ];
@@ -140,22 +140,22 @@ const steps = [
     {
       name: "Priya S.",
       location: "Mumbai",
-      initial: "P",
-      text: "Main 3 saal se thaka hua feel kar rahi thi. 2 hafte mein difference aaya! Ab main active rehti hu.",
+      initial: "P", 
+      text: "मैं 3 साल से थका हुआ feel कर रही थी। 2 हफ्ते में difference aaya! आया! अब मैं active रहती हूं.",
       color: "bg-red-50"
     },
     {
       name: "Rajesh K.",
       location: "Delhi",
       initial: "R",
-      text: "Doctor bhi hairan the. Natural solution ne kaam kiya jab medicines fail ho gayi. Life changing!",
+      text: "Doctor भी हैरान थे. Natural solution जब काम किया medicines fail हो गई। Life changing!",
       color: "bg-orange-50"
     },
     {
       name: "Anita M.",
       location: "Pune",
       initial: "A",
-      text: "Meri energy wapas aayi, neend acha aane laga. Highly recommend! Sabhi ko try karna chahiye.",
+      text: "मेरी energy वापस आई, नींद अच्छा आने लगा। Highly recommend! सभी को try करना चाहिए।",
       color: "bg-red-50"
     }
   ];
@@ -217,17 +217,17 @@ const wrapperRef = useRef(null);
   const consequences = [
     {
       title: "Chronic Disease Risk",
-      text: "Chhoti samasyaein badi bimariyon mein badal jaati hain. Blood pressure, diabetes, ya heart issues shuru ho sakte hain.",
+      text: "छोटी बीमारी बड़ी बिमारियों में बदल जाती है। Blood pressure, diabetes, या heart issues शुरू हो सकते हैं।",
       icon: <AlertTriangle className="w-6 h-6 text-[#EF4444]" />,
     },
     {
       title: "Loss of Energy Forever",
-      text: "Aap apni family aur kaam ke liye kabhi 100% present nahi reh payenge. Hamesha thaka hua mehsoos karenge.",
+      text: "आप अपने family और काम के लिए कभी 100% present नहीं रह पाएँगे. हमेशा थका हुआ मेहसूस करेंगे।",
       icon: <Zap className="w-6 h-6 text-[#EF4444]" />,
     },
     {
       title: "Expensive Medical Bills",
-      text: "Baad mein hospitals aur mahingi medicines par laakhon kharch karne padenge. Isse behtar hai aaj hi dhyan dein.",
+      text: "बाद में Hospitals और महिंगी medicines पर लाखों खरच करने पड़ेंगे. इससे बेहतर है आज ही ध्यान देना.",
       icon: <ShieldAlert className="w-6 h-6 text-[#EF4444]" />,
     },
   ];
@@ -258,7 +258,7 @@ const wrapperRef = useRef(null);
             <h1 style={{ lineHeight: '1.30' }} className="font-bold text-4xl lg:text-6xl text-[#1A1A1A] lg:leading-[1.05] lg:tracking-wider mb-8">
               यह अंदर पल  <br />
               रही बीमारी आपके <br />
-              शरीर को <span className="relative inline-block text-[#B91C1C] underline decoration-wavy decoration-5 decoration-[#b9631c]">
+              शरीर को <span className="relative inline-block text-[#B91C1C] underline decoration-wavy decoration-5 decoration-[#F97316]">
   खत्म
 </span>
               <br />
@@ -281,11 +281,11 @@ const wrapperRef = useRef(null);
             </h1>
 
             <p className="text-xl md:text-[28px] text-[#4A4A4A] font-medium leading-tight italic max-w-lg">
-              "Agar aaj bhi aapne ignore kiya, toh kal bahut der ho sakti hai..."
+              "अगर आज भी आपने <span className="text-[#F97316]">ignore</span> किया, तो कल बहुत देर हो सकती है..."
             </p>
             {/* NEW BUTTON: Abhi Fix Karo */}
             <button className="w-fit bg-[#E67E22] hover:bg-[#D35400] text-white font-black my-8 py-5 px-10 rounded-full text-xl md:text-2xl shadow-[0_10px_30px_rgba(230,126,34,0.4)] transition-all transform active:scale-95 mb-10 tracking-tight">
-              Abhi Fix Karo — Before It's Too Late
+             अभी <span className="text-"> Fix {" "}</span> करो  — Before It's Too Late
             </button>
             {/* TRUST BADGES ROW */}
             <div className="flex flex-wrap items-center gap-x-4 gap-y-3 mt-0">
@@ -368,12 +368,12 @@ const wrapperRef = useRef(null);
           {/* Warning Box */}
           <div className="bg-white border-l-[6px] border-[#C53030] rounded-r-2xl p-8 md:p-10 shadow-xl">
             <h3 className="text-[#C53030] text-xl font-black mb-4 tracking-tight">
-              Agar haan, toh aapka body already warning de raha hai...
+              अगर हाँ, तो आपका body already warning दे रहा है...
             </h3>
             <p className="text-[#4A4A4A] text-lg leading-relaxed font-medium">
               Millions ignore these signs thinking it's just "stress" or "getting older."
-              Lekin andar hi andar damage badh raha hai. If you don't stop it now, it can lead
-              to permanent issues. Aap kab tak is dard aur thakan ke saath jiyenge?
+              लेकिन अंदर ही अंदर damage बढ़ रहा है. If you don't stop it now, it can lead
+              to permanent issues. आप कब तक इस दर्द और थकन के साथ जिएंगे?
             </p>
           </div>
         </div>
@@ -394,7 +394,7 @@ const wrapperRef = useRef(null);
             <span className="text-[#EF4444]">Ignore</span> करने का अंजाम...
           </h2>
           <p className="text-gray-300 text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed font-medium">
-            Ye problem khud-ba-khud theek nahi hogi. Samay ke saath ye aur khatarnak roop le sakti hai.
+            ये <span className="text-[#EF4444]">problem</span> खुद-ब-खुद ठीक नहीं होगी। समय के साथ ये और खतरनाक रूप ले सकती है।
           </p>
         </motion.div>
 
@@ -483,24 +483,10 @@ const wrapperRef = useRef(null);
 
       </div>
     </section>
-    <section className="w-full bg-[#f4f8fc] py-12 px-6 lg:px-12 font-sans">
+    <section className="w-full bg-[#e6f5f5] py-12 px-6 lg:px-12 font-sans">
     <div id="product" className="grid grid-cols-1 md:grid-cols-2 gap-16 my-2 md:my-0 md:mx-4 bg-[#fefefff8] rounded-3xl overflow-hidden shadow-2xl border border-white/5">
   {/* Left Image Gallery with Thumbnails */}
  <div className="flex flex-col">
-       {/* <div 
-        className="relative w-full max-w-[500px] aspect-square rounded-2xl overflow-hidden mb-6 transition-opacity duration-300"
-        onMouseEnter={() => setIsAutoPlaying(false)}
-        onMouseLeave={() => setIsAutoPlaying(true)}
-      >
-        <Image
-          src={allImages[activeIndex]}
-          alt={`${product?.name} view ${activeIndex + 1}`}
-          fill
-          className="object-contain drop-shadow-[0_10px_30px_rgba(251,191,36,0.15)]"
-          priority
-        />
-      </div> */}
-
       {/* --- Main Display Area --- */}
 <div
   className="relative w-full max-w-[500px] aspect-square rounded-2xl overflow-hidden mb-6 bg-white/5 border border-white/10"
@@ -561,16 +547,16 @@ const wrapperRef = useRef(null);
 
   <div className="flex flex-col justify-center p-4">
     {/* Product Name - Lightened */}
-    <h1 className="text-3xl font-bold mb-4 text-amber-600">
+    <h1 className="text-3xl font-bold mb-3 text-amber-600">
       {product.name}
     </h1>
     
     {/* Description - Lightened */}
-    <p className="text-gray-800 mb-6 leading-relaxed">
+    <p className="text-gray-800 mb-3 leading-relaxed font-semibold">
       {product.description}
     </p>
 
-    <div className="flex items-center gap-2 mb-6">
+    <div className="flex items-center gap-2 mb-4">
   {/* The Star Rating */}
   <div className="text-amber-600 text-2xl tracking-widest drop-shadow-[0_0_8px_rgba(251,191,36,0.4)]">
     ★★★★★ 4.5/5
@@ -595,7 +581,7 @@ const wrapperRef = useRef(null);
         <h3 className="text-xs tracking-widest font-bold text-amber-600 uppercase">
           Key Benefits
         </h3>
-        <p className="text-gray-800">
+        <p className="text-gray-800 font-medium">
           {/* Reminder: Update your product object to remove the jewelry materials! */}
           {product.materials.join(", ")}
         </p>
@@ -640,8 +626,8 @@ const wrapperRef = useRef(null);
             ₹ {plan.mrp}
           </p>
 
-          <div className="mt-3 mb-1">
-            <span className=" text-amber-600 text-[0.6rem] leading-tight font-black px-0 py-0 rounded uppercase">
+          <div style={{ lineHeight: '0.85rem' }} className="mt-3 mb-1">
+            <span className=" text-amber-600 text-[0.6rem] lg:text-[0.65rem] font-bold px-0 py-0 rounded uppercase">
                Free Shipping for Prepaid Orders
             </span>
           </div>
@@ -649,7 +635,7 @@ const wrapperRef = useRef(null);
           <p className="text-[10px] text-gray-800 uppercase font-semibold mt-1">
             Inclusive of all taxes
           </p>
-          <p className="text-[10px] font-bold text-amber-600 mt-1">
+          <p className="text-[11px] font-semibold text-amber-600 mt-1">
   {plan.codShipping ? `+ ₹${plan.codShipping} shipping for COD` : "Free shipping on COD"}
 </p>
         </div>
@@ -740,7 +726,7 @@ const wrapperRef = useRef(null);
         
         {/* Section Heading */}
         <h2 className="text-4xl md:text-[56px] font-black text-[#1A1A1A] text-center mb-20 tracking-tighter">
-          Kaise Kaam Karta Hai?
+          यह कैसे काम करता है?
         </h2>
 
         {/* Steps Grid */}
@@ -784,7 +770,7 @@ const wrapperRef = useRef(null);
         
         {/* Section Heading */}
         <h2 className="text-4xl md:text-6xl font-black text-[#1A1A1A] text-center mb-16 tracking-tighter">
-          Sirf 30 Din Mein Kya Badlega?
+          सिर्फ़ <span className="text-[#F97316]">30</span> दिनों में क्या बदलेगा?
         </h2>
 
         {/* Benefits Grid */}

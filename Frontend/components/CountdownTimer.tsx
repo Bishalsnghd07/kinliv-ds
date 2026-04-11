@@ -60,7 +60,7 @@ const CountdownTimer = () => {
           transition={{ repeat: Infinity, duration: 3 }}
         >
           <h2 className="text-4xl md:text-6xl font-black text-[#1A1A1A] mb-6 leading-8">
-            Hurry! Kal Tak Price Badh Sakti Hai
+            Hurry! कल तक <span className="text-[#B91C1C]">Price</span> बढ़ सकती है
           </h2>
           {/* <p className="text-[#B91C1C] font-bold text-lg md:text-2xl mb-12">
             Stock limited. Once gone, price returns to ₹2,999.
@@ -77,7 +77,7 @@ const CountdownTimer = () => {
 
         <div className="mt-16 max-w-xl mx-auto px-2">
           <div className="flex justify-between text-[11px] font-black uppercase tracking-widest text-gray-700 mb-3">
-            <span>🔥 Sirf 47 Units Baaki Hain!</span>
+            <span>🔥 सिर्फ 47 Units बाकी हैं!</span>
             <span className="text-red-600">92% SOLD (HIGH DEMAND)</span>
           </div>
           <div className="w-full h-4 bg-gray-200 rounded-full overflow-hidden shadow-inner">

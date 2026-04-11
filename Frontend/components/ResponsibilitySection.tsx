@@ -92,7 +92,7 @@ const ResponsibilitySection = () => {
         
         {/* Main Heading - Standard H2 (Removed entry animation) */}
         <motion.h2 className="text-[40px] md:text-[68px] font-black text-[#F97316] leading-tight tracking-tighter mb-16">
-          Aapka Health Aapki <br className="hidden md:block" /> Responsibility Hai
+         आपका <span className="text-[#F97316]">Health</span> आपकी <br className="hidden md:block" /> <span className="text-[#F97316]">Responsibility</span> है
         </motion.h2>
 
         {/* Pricing Card - Standard DIV (Removed initial opacity 0) */}
@@ -126,7 +126,7 @@ const ResponsibilitySection = () => {
     behavior: "smooth" 
   });
 }} className="w-full bg-gradient-to-r from-[#B45309] to-[#F97316] text-white font-black py-6 rounded-[24px] text-2xl md:text-3xl shadow-[0_20px_40px_rgba(249,115,22,0.2)] tracking-tight hover:scale-105 active:scale-95 transition-all duration-300">
-            Abhi Order Karo — Limited Stock
+            अभी ऑर्डर करो — Limited Stock
           </button>
 
           {/* Trust Indicators below button */}
