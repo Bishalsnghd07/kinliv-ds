@@ -53,7 +53,7 @@ const CountdownTimer = () => {
   if (!timeLeft) return <div className="h-[300px]" />; 
 
   return (
-    <section className="w-full bg-[#FFF5F5] py-20 px-6 font-sans border-y border-red-100">
+    <section className="w-full bg-[#FFF5F5] py-12 px-6 font-sans border-y border-red-100">
       <div className="max-w-[800px] mx-auto text-center">
         <motion.div
           animate={{ scale: [1, 1.03, 1] }}

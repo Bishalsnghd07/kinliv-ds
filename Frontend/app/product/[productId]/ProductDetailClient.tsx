@@ -391,7 +391,7 @@ const wrapperRef = useRef(null);
           className="text-center mb-16"
         >
           <h2 className="text-[40px] md:text-[64px] font-black text-[#EF4444] mb-6 tracking-tight">
-            Ignore Karne Ka Anjaam...
+            <span className="text-[#EF4444]">Ignore</span> करने का अंजाम...
           </h2>
           <p className="text-gray-300 text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed font-medium">
             Ye problem khud-ba-khud theek nahi hogi. Samay ke saath ye aur khatarnak roop le sakti hai.
@@ -444,7 +444,8 @@ const wrapperRef = useRef(null);
           viewport={{ once: true }}
           className="text-2xl md:text-[40px] font-bold text-[#1A1A1A] mb-12 tracking-tight"
         >
-          Lekin Ek Raasta Hai... Aur Woh Simple Hai
+          लेकिन एक रास्ता है... और वो 
+          <span className="text-emerald-600"> Simple</span> भी है!
         </motion.h2>
 
         {/* Brand Reveal with Green Glow */}
@@ -734,7 +735,7 @@ const wrapperRef = useRef(null);
   
   </div>
   </section>
-  <section className="w-full bg-gray-100 py-24 px-6 lg:px-12 font-sans">
+  <section className="w-full bg-gray-100 py-10 px-6 lg:px-12 font-sans">
       <div className="max-w-[1200px] mx-auto">
         
         {/* Section Heading */}
@@ -778,7 +779,7 @@ const wrapperRef = useRef(null);
         </div>
       </div>
     </section>
-    <section className="w-full bg-white py-24 px-6 lg:px-12 font-sans">
+    <section className="w-full bg-white py-12 px-6 lg:px-12 font-sans">
       <div className="max-w-[1000px] mx-auto">
         
         {/* Section Heading */}
@@ -812,7 +813,7 @@ const wrapperRef = useRef(null);
         </div>
       </div>
     </section>
-    <section className="w-full bg-slate-50 [oklch(0.985 0 0)] py-24 px-6 lg:px-12 font-sans">
+    <section className="w-full bg-slate-50 [oklch(0.985 0 0)] py-12 px-6 lg:px-12 font-sans">
       <div className="max-w-[1200px] mx-auto">
         
         {/* Section Heading */}

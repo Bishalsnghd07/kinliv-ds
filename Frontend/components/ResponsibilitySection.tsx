@@ -87,7 +87,7 @@ import { motion } from "framer-motion";
 
 const ResponsibilitySection = () => {
   return (
-    <section className="w-full bg-[#000000] py-24 px-6 lg:px-12 font-sans overflow-hidden">
+    <section className="w-full bg-[#000000] py-12 px-6 lg:px-12 font-sans overflow-hidden">
       <div className="max-w-[1200px] mx-auto text-center">
         
         {/* Main Heading - Standard H2 (Removed entry animation) */}
