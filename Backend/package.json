@@ -24,7 +24,9 @@
     "morgan": "^1.10.1",
     "multer": "^2.0.2",
     "next": "^15.4.5",
-    "razorpay": "^2.9.6"
+    "node-fetch": "^3.3.2",
+    "razorpay": "^2.9.6",
+    "twilio": "^5.13.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",

@@ -174,8 +174,8 @@ export async function sendOrderConfirmation(
     const msg = {
       to: email,
       cc: [
-        "roshan@volzad.com",
-        "kashishbatra@volzad.com",
+        // "roshan@volzad.com",
+        // "kashishbatra@volzad.com",
         "info@divarostore.com"
       ],
       from: {

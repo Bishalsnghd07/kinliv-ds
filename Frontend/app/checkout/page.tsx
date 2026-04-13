@@ -1155,7 +1155,7 @@ export default function CheckoutPage() {
                 </div>
 
                 {/* COD Card */}
-                {/* <div
+                <div
                   onClick={() => setValue("paymentMethod", "cod")}
                   className={`flex items-center justify-between p-4 border rounded-xl cursor-pointer transition-all ${
                     selectedPayment === "cod" ? "border-[#D87D4A] bg-[#fffaf7] shadow-sm" : "border-gray-200"
@@ -1175,7 +1175,7 @@ export default function CheckoutPage() {
                     </div>
                   </div>
                   <Banknote className="text-gray-400" size={24} />
-                </div> */}
+                </div>
               </div>
             </section>
           </div>

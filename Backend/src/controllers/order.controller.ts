@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import Order from "../models/order.model";
 import { sendOrderConfirmation } from "../services/email.service";
 import { createRazorpayOrder } from "../services/payment.service";
+import { sendOrderConfirmationWhatsApp } from "../services/whatsapp.service"; // ✅ New import
 
 export default class OrderController {
   static async createOrder(req: Request, res: Response) {
@@ -14,70 +15,31 @@ export default class OrderController {
         return res.status(400).json({ error: "Missing required fields" });
       }
 
-      // If Razorpay is used, validate payment mode
-      // if (
-      //   paymentMethod !== "cod" &&
-      //   !["upi", "netbanking", "card", "wallet"].includes(paymentMode)
-      // ) {
-      //   console.log("DEBUG: Invalid payment mode check triggered");
-      //   console.log("DEBUG: paymentMethod =", paymentMethod);
-      //   console.log("DEBUG: paymentMode =", paymentMode);
-      //   console.log("DEBUG: Allowed modes =", [
-      //     "upi",
-      //     "netbanking",
-      //     "card",
-      //     "wallet",
-      //   ]);
-      //   console.log(
-      //     "DEBUG: Mode matches? =",
-      //     ["upi", "netbanking", "card", "wallet"].includes(paymentMode)
-      //   );
-      //   return res.status(400).json({ error: "Invalid payment mode" });
-      // }
-      
-      // --- ADD THIS LOG HERE ---
-    console.log("DEBUG BACKEND:", {
-      receivedMode: `"${paymentMode}"`, // The quotes help see hidden spaces
-      receivedMethod: `"${paymentMethod}"`,
-      checkResult: ["razorpay", "upi", "netbanking", "card", "wallet"].includes(paymentMode)
-    });
+      // Debug log for payment mode
+      console.log("DEBUG BACKEND:", {
+        receivedMode: `"${paymentMode}"`,
+        receivedMethod: `"${paymentMethod}"`,
+        checkResult: ["razorpay", "upi", "netbanking", "card", "wallet"].includes(paymentMode)
+      });
 
+      // Payment mode validation
       if (paymentMethod === "cod") {
-  // skip validation completely
-} else if (
-  !paymentMode ||
-  !["razorpay", "upi", "netbanking", "card", "wallet"].includes(paymentMode)
-) {
-  return res.status(400).json({ error: "Invalid payment mode" });
-}
+        // skip validation completely
+      } else if (
+        !paymentMode ||
+        !["razorpay", "upi", "netbanking", "card", "wallet"].includes(paymentMode)
+      ) {
+        return res.status(400).json({ error: "Invalid payment mode" });
+      }
 
       // Calculate totals
-      // const subtotal = products.reduce(
-      //   (sum: number, item: any) => sum + item.price * item.quantity,
-      //   0
-      // );
-      // const shipping = 0;
-      // const tax = 0;
-      // const total = subtotal + shipping + tax;
-
-      // --- Find this block in order.controller.ts ---
-
-// Calculate totals
-const subtotal = products.reduce(
-  (sum: number, item: any) => sum + item.price * item.quantity,
-  0
-);
-
-// 1. Force shipping to 0
-const shipping = 0; 
-
-// 2. Force tax to 0 (This removes that extra 20% / 0.20)
-const tax = 0; 
-
-// 3. The total is now exactly the subtotal
-const total = subtotal + shipping + tax; 
-
-// --- The rest of the code stays the same ---
+      const subtotal = products.reduce(
+        (sum: number, item: any) => sum + item.price * item.quantity,
+        0
+      );
+      const shipping = 0;
+      const tax = 0;
+      const total = subtotal + shipping + tax;
 
       // Create order
       const order = await Order.create({
@@ -106,8 +68,9 @@ const total = subtotal + shipping + tax;
         orderId: `ORD-${Date.now()}`,
       });
 
-      // COD orders → send email immediately
+      // COD orders → send email and WhatsApp immediately
       if (paymentMethod === "cod" && order.customer?.email) {
+        // 1. Send email (existing)
         await sendOrderConfirmation(order.customer.email, {
           id: order.orderId,
           items: order.products.map((p: any) => ({
@@ -119,6 +82,24 @@ const total = subtotal + shipping + tax;
           estimatedDelivery: new Date(
             Date.now() + 5 * 24 * 60 * 60 * 1000
           ).toLocaleDateString(),
+        });
+
+        // 2. Send WhatsApp notification (new)
+        // 2. Send WhatsApp (NEW)
+        const itemsText = order.products.map(p => p.name).join(', ');
+         console.log("📞 Preparing to send WhatsApp with data:", {
+  phoneNumber: order.customer.phone,
+  orderId: order.orderId,
+  items: itemsText,
+  amount: order.total.toFixed(2)
+});
+
+        await sendOrderConfirmationWhatsApp({
+          phoneNumber: order.customer.phone,
+          orderId: order.orderId,
+          items: itemsText,
+          amount: order.total.toFixed(2),
+          
         });
 
         return res.status(201).json({
